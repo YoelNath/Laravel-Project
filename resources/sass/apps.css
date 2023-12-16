@@ -13,11 +13,10 @@ background-color: rgb(255, 255, 255);
 }
 
 .navbar-expand-lg bg-body-tertiary{
-  display: flex;
-  justify-content: space-between;
+
+
   background-color: aqua;  
-  justify-items: center;
-  align-items: center;
+
     padding: 0;
   margin: 0;
 }
@@ -27,12 +26,17 @@ background-color: rgb(255, 255, 255);
     padding-left: 30px;
     font-weight: 900;
 }
-.container-fluid{
+.containerfluid{
+
     background-color: rgb(236, 236, 245);
     padding: 5px 0px 5px 10px;
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+
 }
 
 .container{

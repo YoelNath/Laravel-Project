@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ParkirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\testong;
+
 use App\Http\Controllers\PageController;
 
 /*
@@ -26,7 +28,7 @@ Route::get('/home',[PageController::class, 'home']) ->name('home');
 Route::get('/mhs',[PageController::class,'mahasiswa']) ->name('mhs');
 
 
-
+Route::get('/parkir',[ParkirController::class,'index']) ->name('parkir');
 
 
 

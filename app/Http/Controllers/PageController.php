@@ -17,6 +17,6 @@ class PageController extends Controller
     public function mahasiswa(){
         $jurusan = jurusan::all();
         $dtmahasiswa = mahasiswa::all();
-        return view('layouts.mahasiswa',['jur'=>$jurusan, 'mhs'=>$dtmahasiswa]);
+        return view('mahasiswa',['jur'=>$jurusan, 'mhs'=>$dtmahasiswa]);
     }
 }
