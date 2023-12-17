@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class parkir extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = ['code','police_number','entry_time','exit_time'];    
 
 }

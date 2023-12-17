@@ -11,11 +11,13 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('parkirs', function (Blueprint $table) {
-            $table->id();
-            $table->string('police');
-            $table->integer('nim');
-
-            $table->timestamps();
+             $table->id();
+            $table->string('code')->unique();
+            $table->string('police_number');
+            $table->timestamp('entry_time');
+            $table->timestamp('exit_time')->nullable(); 
+            $table->timestamp('created_at')->useCurrent(); 
+            $table->timestamp('updated_at')->useCurrent(); 
 
         });
     }

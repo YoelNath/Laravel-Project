@@ -16,13 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layouts.app');
-// })->name('home');
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
 
 
 
-Route::get('/parkir', [ParkirController::class, 'index'])->name('parkir');
+Route::get('/parkir', [ParkirController::class, 'park'])->name('parkir');
 
 
 

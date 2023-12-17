@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 
 class ParkirController extends Controller
 {
-   public function index()
+   public function park(Request $request)
    {
-      $parkdata = parkir::all();
-      $arraynum = [1, 3, 4, 100];
+      $request ->validate([  
+         "police_num"=> "required|string",
+      ]);
+      $parkres = parkir::wherenull('exit_time')
+      ->where('police_number', $request -> police_num)
+      ->get();
 
-      return view("welcome", compact("arraynum", "parkdata"));
+      if($parkres -> isEmpty()){
+
+      }else{   
+         $code = uniqid();
+         
+            
+      }
    }
 }

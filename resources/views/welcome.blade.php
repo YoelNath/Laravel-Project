@@ -16,16 +16,18 @@
     <body class="antialiased">
         @include('layouts.app')
 
-            <div class="container-fluid">
-                <form class="m-5">
+            <div class="container-xxl">
+        <form class="m-5" action="{{url('/parkir')}}" >
+            @csrf
             <div class="form-group mb-3 ">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <label for="police_num" class="mb-1">Enter Police Number</label>
+              <input name="police_num" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="B-1909-NRK">
               
             </div>
             
             <button type="submit" class="btn btn-primary">Submit</button>
         </form> 
+
     </div>
     </body>
 </html>
