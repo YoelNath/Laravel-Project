@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/exit', function () {
+    return view('exit');
+})->name('exit');
+
 
 
 Route::post('/parkir', [ParkirController::class, 'park'])->name('parkir');

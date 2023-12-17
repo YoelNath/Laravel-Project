@@ -31,11 +31,14 @@
         <div class="alert alert-success" role="alert">
             Your unique code: {{ $uniqcode }}
         </div>
-        @else
-        <div class="alert alert-warning" role="alert">
-            No unique code available, Because same police number is detected.
-        </div>
+
         @endisset
+        @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            {{ $errors->first() }}
+        </div>
+    @endif
+    
 
     </div>
     </body>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\parkir;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Redirect;
 class ParkirController extends Controller
 {
    public function park(Request $request)
@@ -29,8 +29,7 @@ class ParkirController extends Controller
        
       }else{   
         
-              $uniqcode = null;
-         return view('welcome', compact('uniqcode'));
+         return Redirect::back()->withErrors(['error' => 'Car is already parked.']);
       }
    }
 }
