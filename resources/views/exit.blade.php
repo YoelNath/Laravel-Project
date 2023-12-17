@@ -22,11 +22,11 @@
         @csrf
         <div class="form-group mb-3 ">
           <label for="unique_code" class="mb-1">Enter Unique Code to exit</label>
-          <input name="unique_code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="B-1909-NRK">
+          <input name="unique_code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="657e8b9c81d7b">
           
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-secondary">Exit</button>
     </form> 
     </div>
     </body>

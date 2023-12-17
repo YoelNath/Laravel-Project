@@ -32,4 +32,28 @@ class ParkirController extends Controller
          return Redirect::back()->withErrors(['error' => 'Car is already parked.']);
       }
    }
+   public function exit(Request $request){
+      $request ->validate([
+         'code'=> 'required|string',
+      ]);
+
+      $codedetect = parkir::where('code', $request -> unique_code)
+      ->wherenull('exit_time')
+      ->get();
+      if($codedetect ->isEmpty()){
+
+      }else{
+         $entrytime = $codedetect ->entry_time;
+         $exittime = now();
+         $totalpark = $entrytime->diffInHours($exittime);
+         $totalpay = $totalpark*3000;
+
+         $codedetect->update({
+            'exit_time' => $exittime,
+            ''
+
+         })
+
+      }
+   }
 }
