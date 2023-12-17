@@ -41,6 +41,7 @@ class ParkirController extends Controller
       ->wherenull('exit_time')
       ->get();
       if($codedetect ->isEmpty()){
+         
 
       }else{
          $entrytime = $codedetect ->entry_time;
@@ -50,10 +51,10 @@ class ParkirController extends Controller
 
          $codedetect->update({
             'exit_time' => $exittime,
-            ''
+            'parking_fee' = $totalpay,
 
          })
-
+         return view('exit.exit-success', compact(''));
       }
    }
 }

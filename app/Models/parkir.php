@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class parkir extends Model
 {
     use HasFactory;
-    protected $fillable = ['code','police_number','entry_time','exit_time'];    
+    protected $fillable = ['parking_fee','code','police_number','entry_time','exit_time'];    
 
 }
