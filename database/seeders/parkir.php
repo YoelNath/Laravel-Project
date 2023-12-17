@@ -15,6 +15,7 @@ class parkir extends Seeder
     {
         DB::table('parkirs')->insert([
             'police' => 'gays',
+            'nim' => '10',
         ]);
     }
 }

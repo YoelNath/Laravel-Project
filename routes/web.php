@@ -1,10 +1,9 @@
 <?php
 
 use App\Http\Controllers\ParkirController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\testong;
 
-use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +20,10 @@ use App\Http\Controllers\PageController;
 //     return view('layouts.app');
 // })->name('home');
 
-Route::get('/',[PageController::class, 'home']);
-
-Route::get('/home',[PageController::class, 'home']) ->name('home');
-
-Route::get('/mhs',[PageController::class,'mahasiswa']) ->name('mhs');
 
 
-Route::get('/parkir',[ParkirController::class,'index']) ->name('parkir');
+Route::get('/parkir', [ParkirController::class, 'index'])->name('parkir');
+
 
 
 
