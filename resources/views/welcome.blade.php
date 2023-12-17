@@ -11,11 +11,12 @@
 
 
     </head>
-    <body class="antialiased">
+    <body>
         @include('layouts.app')
 
             <div class="container-xxl">
-        <form class="m-5" action="{{url('/parkir')}}" method="post" >
+                <h1 class="my-4">Parking Entrance    </h1>
+        <form action="{{url('/parkir')}}" method="post" >
             @csrf
             <div class="form-group mb-3 ">
               <label for="police_num" class="mb-1">Enter Police Number</label>

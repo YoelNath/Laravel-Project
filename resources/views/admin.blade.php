@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 @include('layouts.app')
-<body class="container mt-5">
+<body>
+    
 
-    <h1>Parking Report</h1>
+<div class="container-xxl">
 
+    <h1 class="my-4">Parking Report</h1>
     <form action="{{ url('/admins') }}" method="get" class="mb-3">
         <div class="form-group">
             <label for="start_date">Start Date:</label>
@@ -26,7 +28,7 @@
         <button type="submit" class="btn btn-success">Generate Report</button>
     </form>
 
-   
+</div>
 
  
 </body>

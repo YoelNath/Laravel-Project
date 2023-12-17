@@ -17,7 +17,8 @@
         @include('layouts.app')
 
             <div class="container-xxl">
-                <form class="m-5" action="{{url('/exits')}}" method="post" >
+                <h1 class="my-4">Parking Exit</h1>
+                <form  action="{{url('/exits')}}" method="post" >
                     @csrf
                     <div class="form-group mb-3 ">
                         <label for="unique_code" class="mb-1">Enter Unique Code to exit</label>
