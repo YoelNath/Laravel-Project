@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\parkir;
-
+use App\Exports\ParkingExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -22,5 +23,8 @@ class AdminController extends Controller
             return view('admin.result', ['parkingRecord' => $parkingRecord]   );
     }
     
-    
+    public function exportReport()
+    {
+        return Excel::download(new ParkingExport(), 'parking_report_' . now()->format('YmdHis') . '.xlsx');
+    }
 }

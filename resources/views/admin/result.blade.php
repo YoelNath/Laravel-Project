@@ -39,7 +39,14 @@
                         @endforelse
                     </tbody>
                 </table>
+
+                <form action="{{ url('/admin/export-report') }}" method="get" class="mb-3">
+
+            
+                    <button type="submit" class="btn btn-success">Generate Report</button>
+                </form> 
     </div>
+    
     </body>
 </html>
 
