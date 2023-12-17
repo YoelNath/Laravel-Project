@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ParkirController;
 
 use Illuminate\Support\Facades\Route;
@@ -25,9 +27,12 @@ Route::get('/exit', function () {
 })->name('exit');
 
 
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
 
-Route::post('/parkir', [ParkirController::class, 'park'])->name('parkir');
-
-
+Route::post('/parkir', [ParkirController::class, 'park']);
+Route::post('/exits', [ParkirController::class, 'exit']);
+Route::get('/admins', [AdminController::class,'generateReport']);
 
 

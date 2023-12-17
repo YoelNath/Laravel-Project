@@ -25,36 +25,39 @@ class ParkirController extends Controller
             'entry_time' => now()
          ]);
 
-         return view('welcome', compact('uniqcode'));
+         return view('welcome',  compact('uniqcode'));
+        
+       
        
       }else{   
         
          return Redirect::back()->withErrors(['error' => 'Car is already parked.']);
       }
    }
-   public function exit(Request $request){
-      $request ->validate([
-         'code'=> 'required|string',
+   public function exit(Request $request) {
+      $request->validate([
+          'unique_code' => 'required|string',
       ]);
 
-      $codedetect = parkir::where('code', $request -> unique_code)
-      ->wherenull('exit_time')
-      ->get();
-      if($codedetect ->isEmpty()){
-         
+      $parkingRecord = parkir::where('code', $request->unique_code)
+          ->whereNull('exit_time')
+          ->first();
 
-      }else{
-         $entrytime = $codedetect ->entry_time;
-         $exittime = now();
-         $totalpark = $entrytime->diffInHours($exittime);
-         $totalpay = $totalpark*3000;
+      if ($parkingRecord) {
+          $entryTime = $parkingRecord->entry_time;
+          $exitTime = now();
+          $hoursParked = $entryTime->diffInHours($exitTime);
 
-         $codedetect->update({
-            'exit_time' => $exittime,
-            'parking_fee' = $totalpay,
+          $parkingFee = ($hoursParked) * 3000;
 
-         })
-         return view('exit.exit-success', compact(''));
+          $parkingRecord->update([
+              'exit_time' => $exitTime,
+              'parking_fee' => $parkingFee,
+          ]);
+
+          return view('exit-success', ['parkingRecord' => $parkingRecord]   );
+      } else {
+         return Redirect::route('exit')->withErrors(['error' => 'Invalid unique code.']);
       }
    }
 }

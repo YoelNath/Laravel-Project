@@ -17,17 +17,22 @@
         @include('layouts.app')
 
             <div class="container-xxl">
-
-    <form class="m-5" action="{{url('/parkir')}}" method="POST" >
-        @csrf
-        <div class="form-group mb-3 ">
-          <label for="unique_code" class="mb-1">Enter Unique Code to exit</label>
-          <input name="unique_code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="657e8b9c81d7b">
-          
-        </div>
-        
-        <button type="submit" class="btn btn-secondary">Exit</button>
-    </form> 
+                <form class="m-5" action="{{url('/exits')}}" method="post" >
+                    @csrf
+                    <div class="form-group mb-3 ">
+                        <label for="unique_code" class="mb-1">Enter Unique Code to exit</label>
+                        <input name="unique_code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Unique Code">
+                        
+                      </div>
+                      
+                      <button type="submit" class="btn btn-secondary">Exit</button>
+                </form>
+            
+                @if ($errors->any())
+                <div class="alert alert-danger" role="alert">
+                    {{ $errors->first() }}
+                </div>
+            @endif
     </div>
     </body>
 </html>
