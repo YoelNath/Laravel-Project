@@ -19,9 +19,8 @@ class ParkingExport implements FromCollection
     use Exportable;
 
     public function collection()
-    {
-        // Retrieve the data you want to export
-        $parkingRecords = parkir::all(['id', 'code', 'police_number', 'entry_time', 'exit_time']);
+    {        
+        $parkingRecords = parkir::all(['id', 'code', 'police_number', 'entry_time', 'exit_time','parking_fee']);
 
         // Transform the data for export
         $exportData = $parkingRecords->map(function ($record) {
@@ -31,6 +30,8 @@ class ParkingExport implements FromCollection
                 'Police Number' => $record->police_number,
                 'Entry Time' => $record->entry_time,
                 'Exit Time' => $record->exit_time,
+    
+                
             ];
         });
 

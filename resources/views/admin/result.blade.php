@@ -8,6 +8,7 @@
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <script src="./js/app.js"></script>
 
 
     </head>
@@ -22,6 +23,7 @@
                             <th>Entry Time</th>
                             <th>Exit Time</th>
                             <th>Unique Code</th>
+                            <th>Parking Fee</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,10 +33,11 @@
                                 <td>{{ $record->entry_time }}</td>
                                 <td>{{ $record->exit_time }}</td>
                                 <td>{{ $record->code}}</td>
+                                <td>{{ $record->parking_fee}}</td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="3">No records found for the specified date range.</td>
+                                <td colspan="3">No records found on the specified date range</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -43,7 +46,7 @@
                 <form action="{{ url('/admin/export-report') }}" method="get" class=" d-flex justify-content-center mb-3">
 
             
-                    <button type="submit" class="btn btn-success">Generate Report</button>
+                    <button type="submit" id="btn-gen" class="btn btn-success">Generate Report</button>
                 </form> 
     </div>
     
