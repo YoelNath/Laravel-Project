@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function showReportForm() {
-        return view('admin.report');
-    }
+
     public function generateReport(Request $request) {
         $request->validate([
             'start_date' => 'required|date',
@@ -21,7 +19,7 @@ class AdminController extends Controller
             ->orWhereBetween('exit_time', [$request->start_date, $request->end_date])
             ->get();
     
-            return view('admin-result', ['parkingRecord' => $parkingRecord]   );
+            return view('admin.result', ['parkingRecord' => $parkingRecord]   );
     }
     
     

@@ -26,7 +26,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">Generate Report</button>
-    </form>
+    </form> 
 
 </div>
 

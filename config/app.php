@@ -56,6 +56,15 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    'providers' => [
+    // ...
+    Maatwebsite\Excel\ExcelServiceProvider::class,
+],
+
+'aliases' => [
+    // ...
+    'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+],
 
     'asset_url' => env('ASSET_URL'),
 

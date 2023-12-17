@@ -21,6 +21,7 @@
                             <th>Police Number</th>
                             <th>Entry Time</th>
                             <th>Exit Time</th>
+                            <th>Unique Code</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,6 +30,7 @@
                                 <td>{{ $record->police_number }}</td>
                                 <td>{{ $record->entry_time }}</td>
                                 <td>{{ $record->exit_time }}</td>
+                                <td>{{ $record->code}}</td>
                             </tr>
                         @empty
                             <tr>

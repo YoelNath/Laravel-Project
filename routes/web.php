@@ -28,7 +28,7 @@ Route::get('/exit', function () {
 
 
 Route::get('/admin', function () {
-    return view('admin');
+    return view('admin.control');
 })->name('admin');
 
 Route::post('/parkir', [ParkirController::class, 'park']);
