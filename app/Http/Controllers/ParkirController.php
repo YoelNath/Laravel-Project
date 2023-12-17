@@ -18,11 +18,19 @@ class ParkirController extends Controller
       ->get();
 
       if($parkres -> isEmpty()){
+         $uniqcode = uniqid();
+         parkir::create([
+            'code' => $uniqcode,
+            'police_number'=> $request -> police_num,
+            'entry_time' => now()
+         ]);
 
+         return view('welcome', compact('uniqcode'));
+       
       }else{   
-         $code = uniqid();
-         
-            
+        
+              $uniqcode = null;
+         return view('welcome', compact('uniqcode'));
       }
    }
 }

@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/parkir', [ParkirController::class, 'park'])->name('parkir');
+Route::post('/parkir', [ParkirController::class, 'park'])->name('parkir');
 
 
 

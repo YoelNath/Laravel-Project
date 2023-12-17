@@ -17,7 +17,7 @@
         @include('layouts.app')
 
             <div class="container-xxl">
-        <form class="m-5" action="{{url('/parkir')}}" >
+        <form class="m-5" action="{{url('/parkir')}}" method="POST" >
             @csrf
             <div class="form-group mb-3 ">
               <label for="police_num" class="mb-1">Enter Police Number</label>
@@ -27,6 +27,15 @@
             
             <button type="submit" class="btn btn-primary">Submit</button>
         </form> 
+        @isset($uniqcode)
+        <div class="alert alert-success" role="alert">
+            Your unique code: {{ $uniqcode }}
+        </div>
+        @else
+        <div class="alert alert-warning" role="alert">
+            No unique code available, Because same police number is detected.
+        </div>
+        @endisset
 
     </div>
     </body>
