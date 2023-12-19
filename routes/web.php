@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\ParkirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\testong;
@@ -17,18 +18,26 @@ use App\Http\Controllers\PageController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layouts.app');
-// })->name('home');
+Route::get('/', function () {
+    return view('layouts.app');
+})->name('home');
 
-Route::get('/',[PageController::class, 'home']);
+Route::get('/data', function () {
+    return view('database');
+})->name('dta');
 
-Route::get('/home',[PageController::class, 'home']) ->name('home');
+Route::get('/', [PageController::class, 'home']);
 
-Route::get('/mhs',[PageController::class,'mahasiswa']) ->name('mhs');
+Route::get('/home', [PageController::class, 'home'])->name('home');
+
+Route::get('/mhs', [PageController::class, 'mahasiswa'])->name('mhs');
 
 
-Route::get('/parkir',[ParkirController::class,'index']) ->name('parkir');
+Route::get('/parkir', [ParkirController::class, 'index'])->name('parkir');
+
+
+Route::post('/datas', [DatabaseController::class, 'data'])->name('datas');
+
 
 
 

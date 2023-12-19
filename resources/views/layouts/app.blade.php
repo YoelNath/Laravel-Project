@@ -23,6 +23,11 @@
             <a class="nav-link" href="{{route('mhs')}}">List mahasiswa</a>
 
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('dta')}}">List mahasiswa</a>
+
+          </li>
         </ul>
 
     </div>

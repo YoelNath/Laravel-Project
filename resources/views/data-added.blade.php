@@ -4,5 +4,4 @@
     
 @section('content')
 
-<form action="" method="post"></form>
-@endsection
+<h1>data added</h1>
